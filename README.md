@@ -1,5 +1,46 @@
 # gpu-burn
 
+## Usage
+
+```plain
+    Basic platform usage
+    
+    List all GPUs available and run for $TIME seconds
+    gpu_burn -l $TIME
+    or 
+    List all GPUs available and run on the Nth GPU only and for $TIME seconds
+    gpu_burn -l -i N $TIME
+```
+
+```plain
+    GPU Cuda versions
+    defaults:
+      CUDA_VERSION=11.8.0
+      IMAGE_DISTRO=ubi8
+    
+    CUDA_VERSION
+    IMAGE_DISTRO
+
+```
+
+
+```plain
+    GPU Burn
+    Usage: gpu_burn [OPTIONS] [TIME]
+    
+    -m X   Use X MB of memory
+    -m N%  Use N% of the available GPU memory
+    -d     Use doubles
+    -tc    Try to use Tensor cores (if available)
+    -l     List all GPUs in the system
+    -i N   Execute only on GPU N 
+    -h     Show this help message
+    
+    Example:
+    gpu_burn -d 3600
+```
+
+
 Multi-GPU CUDA stress test
 <http://wili.cc/blog/gpu-burn.html>
 
@@ -81,20 +122,4 @@ can be set to change the resulting image tag:
 
 `make IMAGE_NAME=myregistry.private.com/gpu-burn CUDA_VERSION=12.0.1 IMAGE_DISTRO=ubuntu22.04 image`
 
-## Usage
 
-```plain
-    GPU Burn
-    Usage: gpu_burn [OPTIONS] [TIME]
-    
-    -m X   Use X MB of memory
-    -m N%  Use N% of the available GPU memory
-    -d     Use doubles
-    -tc    Try to use Tensor cores (if available)
-    -l     List all GPUs in the system
-    -i N   Execute only on GPU N
-    -h     Show this help message
-    
-    Example:
-    gpu_burn -d 3600
-```

@@ -1,4 +1,6 @@
 
+.DS_Store
+
 gpu_burn-drv\.o
 
 compare\.ptx
