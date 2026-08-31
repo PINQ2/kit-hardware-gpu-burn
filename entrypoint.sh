@@ -11,7 +11,7 @@ if [ -n "$TIME" ]; then STRESS_ARGS="$STRESS_ARGS $TIME"; fi
 
 if [ -n "$STRESS_ARGS" ]; then
     echo "Starting gpu-burn stress with args: $STRESS_ARGS"
-    ./gpu_burn -l $STRESS_ARGS
+    ./gpu_burn -l && ./gpu_burn $STRESS_ARGS
 fi
 
 exec "$@"
