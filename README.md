@@ -4,12 +4,16 @@
 
 ```plain
     Basic platform usage
-    
+
     List all GPUs available and run for $TIME seconds
     gpu_burn -l $TIME
     or 
     List all GPUs available and run on the Nth GPU only and for $TIME seconds
     gpu_burn -l -i N $TIME
+
+    GPU_INDEX=0 -> use all available GPUs
+    GPU_INDEX=N -> use only the nth (index) GPU
+
 ```
 
 ```plain
