@@ -17,6 +17,9 @@ FROM nvidia/cuda:${CUDA_VERSION}-runtime-${IMAGE_DISTRO}
 COPY --from=builder /build/gpu_burn /app/
 COPY --from=builder /build/compare.fatbin /app/
 
+COPY entrypoint.sh /app/entrypoint.sh
+RUN chmod +x /app/entrypoint.sh
+
 WORKDIR /app
 
 ENTRYPOINT ["/entrypoint.sh"]
