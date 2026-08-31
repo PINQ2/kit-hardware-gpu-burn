@@ -22,4 +22,4 @@ RUN chmod +x /app/entrypoint.sh
 
 WORKDIR /app
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["./entrypoint.sh"]
