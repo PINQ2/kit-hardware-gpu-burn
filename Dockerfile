@@ -1,4 +1,4 @@
-ARG CUDA_VERSION=11.8.0
+ARG CUDA_VERSION=13.0
 ARG IMAGE_DISTRO=ubi8
 ARG COMPUTE=75
 
@@ -19,5 +19,4 @@ COPY --from=builder /build/compare.fatbin /app/
 
 WORKDIR /app
 
-ENTRYPOINT ["./gpu_burn"]
-CMD ["60"]
+ENTRYPOINT ["/entrypoint.sh"]
